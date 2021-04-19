@@ -10,7 +10,7 @@ const errorElement2 = document.getElementById('errors2')
 form.addEventListener('submit',(e)=>{
     password.focus()
     let errors = []
-    if (login.value == '' || login.value == null || login.value != 'gtd2021' || password.value == '' || password.value == null || password.value != 'gtd2021') {
+    if (login.value == '' || login.value == null || login.value != 'Roche Diyabet' || password.value == '' || password.value == null || password.value != 'Accu-Chek') {
         errors.push('Yanlış şifre veya login')
     }
 
@@ -25,7 +25,7 @@ form.addEventListener('submit',(e)=>{
 form2.addEventListener('submit',(e)=>{
     password2.focus()
     let errors= []
-    if (password2.value == '' || password2.value == null || password2.value != 'gtd2021') {
+    if (password2.value == '' || password2.value == null || password2.value != 'Accu-Chek') {
         errors.push('Yanlış şifre')
     }
 
