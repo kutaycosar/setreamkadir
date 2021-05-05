@@ -16,7 +16,7 @@
           <thead style="text-align: center;" class="thead-dark">
             <tr>
               <th style="font-size:20pt;" scope="col">İsim</th>
-              <th style="font-size:20pt;" scope="col">Yorum</th>
+              <th style="font-size:20pt;" scope="col">GelenSoru</th>
               <th style="font-size:20pt;" scope="col">Tarih</th>
               <th style="font-size:20pt;" scope="col"></th>
             </tr>
@@ -24,8 +24,8 @@
           <% data.forEach(item => { %>
             
             <tbody>
-              <tr style="text-align: center;">
-                <td style="word-break: break-word;"><%= item.isim %></td>
+              <tr style="text-align: left;">
+                <td style="text-align: center; word-break: break-word;"><%= item.isim %></td>
                 <td style="word-break: break-word;"><%= item.yorum %></td>
                 <td ><%= item.date%></td>
                 <td ><button data-id="<%= item._id %>" class="delete-me btn btn-outline-dark btn-lg">Yorumu Sil</button></td>

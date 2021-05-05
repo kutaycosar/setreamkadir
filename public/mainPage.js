@@ -42,7 +42,7 @@ document.getElementById("create-form").addEventListener("submit", function(e){
     if (errors.length == 0) {
     errors = []
     e.preventDefault()
-    alertTimeoutSuccess("Yorumunuz gönderildi", 1100)
+    alertTimeoutSuccess("Yorumunuz gönderildi", 3000)
     axios.post('/create-item', {text: createField.value ,text2: createField2.value}).then(function () {
       createField.value = ""
       createField2.value = ""
@@ -55,7 +55,7 @@ document.getElementById("create-form").addEventListener("submit", function(e){
   }else{
     errors = []
     e.preventDefault()
-    alertTimeoutFail("Gönderim başarısız." ,3000)
+    alertTimeoutFail("Lütfen adınızı soyadınızı yazınız." ,3000)
     createField.value = ""
     createField2.value = ""
     createField.placeholder = "İsminiz boş bırakılamaz."
