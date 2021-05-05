@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Diyabet Online</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="/main.css">
+  <script defer src="guestPage.js"></script>
+</head>
+<body>
+
+  <div class="d-flex align-items-center justify-content-center">
+    <img class=" font-weight-normal img-fluid " alt="Responsive image" width="2000" height="300" src="Headbanner.png">
+  </div>
+    
+
+  <div class="d-flex align-items-center justify-content-center">
+    <img class=" font-weight-normal img-fluid " alt="Responsive image" width="1" height="1" src="Empty.png">
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center">
+    <img class=" font-weight-normal img-fluid " alt="Responsive image" width="900" height="200" src="konusmacilar.png">
+  </div>
+   
+  <div class="d-flex align-items-center justify-content-center">
+  <img class="font-weight-normal img-fluid " style="cursor: pointer;" alt="Responsive image" width="555" height="75" src="detail_button.png" data-toggle="modal" data-target="#myModal">
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center">
+    <h6 style="color:  orange;">Kullanıcı adı: Roche Diyabet</h4>
+    </div>
+    <div class="d-flex align-items-center justify-content-center">
+      <h6 style="color:  orange;">Şifre: Accu-Chek</h4>
+      </div>
+  <div class="d-flex align-items-center justify-content-center">
+    <h6 style="color:royalblue;">Beşeri tıbbi ürünlerin tanıtım faaliyetleri hakkında yönetmelik kapsamında elektronik bilimsel toplantı öncesinde kayıt bilgilerinizi girmeniz istenecektir.</h4>
+    </div>
+  
+
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h6>Kullanıcı adınızı ve toplantı şifresini giriniz</h6>
+            </div>
+            <div class="modal-body">
+            <div class="container">
+            <div class="row">
+                
+              <form id="toplanti-giris" action="/video" method="GET">
+                <p></p>
+                <div class="form-group">  
+                  <div id='errors'></div>
+                  <div class="d-flex justify-content-center">
+                    <input id="toplantiLogin" name="login" autofocus autocomplete="off" class="form-control mr-3" type="login" placeholder="Kullanıcı Adı">
+                    <input id="toplantiPass" name="pass" autofocus autocomplete="off" class="form-control mr-3" type="isim" placeholder="Şifre">
+                    
+                    <button type="submit" class="btn btn-danger">Giriş</button>
+                  </div>
+                  
+                  
+                </div>
+                <div>
+                  
+                </div>
+                </form>
+              </div>
+            </div>
+            </div>
+        </div>  
+      </div>
+    </div>
+
+
+ 
+  <div class="d-flex align-items-center justify-content-center">
+    <img class=" font-weight-normal img-fluid " alt="Responsive image" width="300" height="300" src="Empty.png">
+  </div>
+  
+  
+  <footer class="mb-3 bg-white">
+    <div class="d-flex justify-content-center">
+      <div class="d-flex">
+        <div class=""><img class="my-0 font-weight-normal" alt="Responsive image" width="500" height="200" src="consensuslogo.png"></div>
+      </div>
+  </div>
+    <div class="d-flex justify-content-around p-3">
+        
+        <div class="d-flex">
+          
+          <div class="p-2" style="line-height: 113%;"><b> ORGANİZASYON SEKRETERYASI </b><br><small><b> Consensus Kongre & Organizasyon Servisleri</b>  Gayrettepe Mah. Yıldız Posta Cad. Şişik Apt. B Blok No:46 K: 11 D: 21 Gayrettepe / Beşiktaş - İstanbul</small><br>
+            <small>Tel : +90 212 280 66 11 &nbsp; Gsm : 0533 744 72 15 &nbsp; +90 212 280 66 69 </small> <br>
+            <a href="mailto: kadircaglar@consensustourism.com"><b>kadircaglar@consensustourism.com</b></a>
+            <a href="www.consensustourism.com"> &nbsp; <b>www.consensustourism.com</b></a>
+  
+          </div>
+        </div>
+    
+    <!-- <img class="my-0 font-weight-normal" alt="Responsive image" width="128" height="73" src="bilimilaclogo.png"> -->
+    
+    
+    </div>
+    <div class="d-flex justify-content-center">
+      <p class="m-0 text-center small text-muted py-3">Copyright &copy; 2021 Consensus Kongre & Organizasyon Servisleri</p>
+    </div>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>$('[data-toggle="tooltip"]').tooltip()</script>
+</body>
+</html>
+

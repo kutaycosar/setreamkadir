@@ -46,30 +46,30 @@ app.get('/yorumlar',passwordProtected, function(req,res){
   
 })
 
-app.get('/etkinlik1', function(req,res){
+// app.get('/etkinlik1', function(req,res){
   
-    res.render('etkinlik1.ejs')  
-})
+//     res.render('etkinlik1.ejs')  
+// })
 
-app.get('/etkinlik1', function(req,res){
+// app.get('/etkinlik1', function(req,res){
   
-  res.render('etkinlik1.ejs')  
-})
+//   res.render('etkinlik1.ejs')  
+// })
 
-app.get('/etkinlik2', function(req,res){
+// app.get('/etkinlik2', function(req,res){
   
-  res.render('etkinlik2.ejs')  
-})
-
-app.get('/video', function(req,res){
-  
-  res.render('home-dashboard.ejs')  
-})
+//   res.render('etkinlik2.ejs')  
+// })
 
 app.get('/video', function(req,res){
   
-  res.render('etkinlik2.ejs')  
+  res.redirect('/home') 
 })
+
+// app.get('/video', function(req,res){
+  
+//   res.render('etkinlik2.ejs')  
+// })
   
 
 

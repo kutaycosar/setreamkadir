@@ -5,19 +5,19 @@ exports.login = function(req, res) {
   user.login().then(function(result) {
     req.session.user = {avatar: user.avatar, username: user.data.username}
     req.session.save(function() {
-      res.redirect('/')
+      res.redirect('/home')
     })
   }).catch(function(e) {
     req.flash('errors', e)
     req.session.save(function() {
-      res.redirect('/')
+      res.redirect('/home')
     })
   })
 }
 
 exports.logout = function(req, res) {
   req.session.destroy(function() {
-    res.redirect('/')
+    res.redirect('/home')
   })
 }
 
@@ -26,14 +26,14 @@ exports.register = function(req, res) {
   user.register().then(() => {
     req.session.user = {username: user.data.username, avatar: user.avatar}
     req.session.save(function() {
-      res.redirect('/')
+      res.redirect('/home')
     })
   }).catch((regErrors) => {
     regErrors.forEach(function(error) {
       req.flash('regErrors', error)
     })
     req.session.save(function() {
-      res.redirect('/')
+      res.redirect('/home')
     })
   })
 }
@@ -45,3 +45,8 @@ exports.home = function(req, res) {
     res.render('home-guest', {errors: req.flash('errors'), regErrors: req.flash('regErrors')})
   }
 }
+
+exports.welcome = function(req, res) {
+  res.render('karsilama.ejs')
+}
+

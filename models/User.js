@@ -13,7 +13,7 @@ User.prototype.cleanUp = function() {
   if (typeof(this.data.email) != "string") {this.data.email = ""}
   // if (typeof(this.data.password) != "string") {this.data.password = ""}
   if (typeof(this.data.brans) != "string") {this.data.brans = ""}
-  if (typeof(this.data.kurum) != "string") {this.data.kurum = ""}
+  // if (typeof(this.data.kurum) != "string") {this.data.kurum = ""}
   if (typeof(this.data.sehir) != "string") {this.data.sehir = ""}
   // if (typeof(this.data.tckimlik) != "string") {this.data.tckimlik = ""}
 
@@ -23,11 +23,11 @@ User.prototype.cleanUp = function() {
    
     // password: this.data.password,
     email: this.data.email.trim().toLowerCase(),
-    kurum: this.data.kurum,
+    // kurum: this.data.kurum,
     brans: this.data.brans,
     sehir: this.data.sehir,
     // tckimlik: this.data.tckimlik,
-    
+  
     
   }
 }
@@ -36,7 +36,7 @@ User.prototype.validate = function() {
   return new Promise(async (resolve, reject) => {
     if (this.data.username == "") {this.errors.push("İsim soy isim girmelisiniz.")}
     if (this.data.brans == "") {this.errors.push("Branş girmelisiniz.")}
-    if (this.data.kurum == "") {this.errors.push("Kurumunuzu girmelisiniz.")}
+    // if (this.data.kurum == "") {this.errors.push("Kurumunuzu girmelisiniz.")}
     if (this.data.sehir == "") {this.errors.push("Şehir girmelisiniz.")}
     // if (this.data.tckimlik == "") {this.errors.push("T.C. kimlik no girmelisiniz.")}
 
