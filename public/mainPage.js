@@ -5,6 +5,7 @@ let errors = []
 
 let validation = function(){
   // if (createField.value.length < 3) {errors.push("İsim ve soyisminiz 3 karakterden kısa olamaz.")}
+  if(createField.value.length < 1){errors.push("İsminiz boş bırakılamaz.")}
   if (createField2.value.length < 1) {errors.push("Yorumunuz boş bırakılamaz.")}
 }
 ///
@@ -57,7 +58,7 @@ document.getElementById("create-form").addEventListener("submit", function(e){
     alertTimeoutFail("Gönderim başarısız." ,3000)
     createField.value = ""
     createField2.value = ""
-    createField.placeholder = "İsminiz"
+    createField.placeholder = "İsminiz boş bırakılamaz."
     createField2.placeholder = "Yorumunuz boş bırakılamaz."
     // createField2.placeholder = "Yorumunuz on karakterden uzun olmalıdır."
     createField2.focus()
