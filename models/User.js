@@ -72,7 +72,7 @@ User.prototype.login = function() {
     usersCollection.findOne({email: this.data.email}).then((attemptedUser) => {
       if (attemptedUser && bcrypt.compareSync()) {
         this.data = attemptedUser
-        this.getAvatar()
+       
         resolve("Tebrikler!")
       } else {
         reject("Geçersiz kullanıcı adı / şifre.")
