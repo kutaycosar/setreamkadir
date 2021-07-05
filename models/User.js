@@ -8,16 +8,38 @@ let User = function(data) {
   this.errors = []
 }
 
+/*TC Kimlik Kontrol*/
+function tcKontrol(tc){
+  if(tc.substr(0,1)==0 || tc.length!=11){
+    return false;
+  }
+  var i = 9, md='', mc='', digit, mr='';
+  while(digit = tc.charAt(--i)){
+    i%2==0 ? md += digit : mc += digit;
+  }
+  if(((eval(md.split('').join('+'))*7)-eval(mc.split('').join('+')))%10!=parseInt(tc.substr(9,1),10)){
+    return false;
+  }
+  for (c=0;c<=9;c++){
+    mr += tc.charAt(c);
+  }
+  if(eval(mr.split('').join('+'))%10!=parseInt(tc.substr(10,1),10)){
+    return false;
+  }
+  return true;
+}
+  /*TC Kimlik Kontrol*/
+
 User.prototype.cleanUp = function() {
   if (typeof(this.data.username) != "string") {this.data.username = ""}
   if (typeof(this.data.email) != "string") {this.data.email = ""}
   // if (typeof(this.data.password) != "string") {this.data.password = ""}
   if (typeof(this.data.brans) != "string") {this.data.brans = ""}
-  // if (typeof(this.data.kurum) != "string") {this.data.kurum = ""}
+  if (typeof(this.data.kurum) != "string") {this.data.kurum = ""}
   if (typeof(this.data.sehir) != "string") {this.data.sehir = ""}
   if (typeof(this.data.unvan) != "string") {this.data.sehir = ""}
   if (typeof(this.data.kurum) != "string") {this.data.sehir = ""}
-  // if (typeof(this.data.tckimlik) != "string") {this.data.tckimlik = ""}
+  if (typeof(this.data.tckimlik) != "string") {this.data.tckimlik = ""}
 
   // get rid of any bogus properties
   this.data = {
@@ -25,12 +47,12 @@ User.prototype.cleanUp = function() {
    
     // password: this.data.password,
     email: this.data.email.trim().toLowerCase(),
-    // kurum: this.data.kurum,
+    
     brans: this.data.brans,
     sehir: this.data.sehir,
     unvan: this.data.unvan,
-    kurum: this.data.kurum
-    // tckimlik: this.data.tckimlik,
+    kurum: this.data.kurum,
+    tckimlik: this.data.tckimlik,
   
     
   }
@@ -39,12 +61,11 @@ User.prototype.cleanUp = function() {
 User.prototype.validate = function() {
   return new Promise(async (resolve, reject) => {
     if (this.data.username == "") {this.errors.push("İsim soy isim girmelisiniz.")}
-    if(this.data.unvan == ""){this.data.erros.push("Ünvan girmelisiniz")}
-    if(this.data.kurum == ""){this.data.erros.push("Kurum girmelisiniz")}
+    if(this.data.unvan == "") {this.errors.push("Ünvan girmelisiniz")}
+    if(this.data.kurum == "") {this.errors.push("Kurum girmelisiniz")}
     if (this.data.brans == "") {this.errors.push("Branş girmelisiniz.")}
-    // if (this.data.kurum == "") {this.errors.push("Kurumunuzu girmelisiniz.")}
     if (this.data.sehir == "") {this.errors.push("Şehir girmelisiniz.")}
-    // if (this.data.tckimlik == "") {this.errors.push("T.C. kimlik no girmelisiniz.")}
+    if (!tcKontrol(this.data.tckimlik)) {this.errors.push("Geçerli bir T.C kimlik numarası girmelisiniz.")}
 
     // if (this.data.username != "" && !validator.isAlphanumeric(this.data.username)) {this.errors.push("Kullanıcı adı sadece harf ve numara barındırabilir.")}
     if (!validator.isEmail(this.data.email)) {this.errors.push("Geçerli bir mail adresi girmelisiniz.")}
